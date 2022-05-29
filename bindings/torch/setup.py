@@ -41,7 +41,8 @@ if True or torch.cuda.is_available(): # Force to install without consider the GP
 				raise RuntimeError("Could not locate a supported Microsoft Visual C++ installation")
 			os.environ["PATH"] += ";" + cl_path
 
-	major, minor = torch.cuda.get_device_capability()
+	#major, minor = torch.cuda.get_device_capability()
+	major, minor = 7, 0 #NVIDIA V100
 	compute_capability = major * 10 + minor
 
 	nvcc_flags = [
