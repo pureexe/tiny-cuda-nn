@@ -19,7 +19,7 @@ print(f"Building PyTorch extension for tiny-cuda-nn version {VERSION}")
 
 ext_modules = []
 
-if torch.cuda.is_available():
+if True or torch.cuda.is_available(): # Force to install without consider the GPU
 	include_networks = True
 	if "--no-networks" in sys.argv:
 		include_networks = False
